@@ -1,7 +1,7 @@
 <?php 
 
 
-//add_action('wp_footer', 'custom_preloader');
+add_action('wp_footer', 'custom_preloader');
 function custom_preloader() { 
 
 	global $post;
@@ -56,7 +56,7 @@ function custom_preloader() {
 			function checkVideos() {
 				let allVideosLoaded = true;
 				$('video').each(function() {
-					console.log(this.readyState);
+					//console.log(this.readyState);
 					if ( this.readyState !== 4 ) {
 						allVideosLoaded = false;
 						return false; // break out of the loop
@@ -73,7 +73,7 @@ function custom_preloader() {
 			// Check initially and on video events
 			// Interval to repeatedly check video states
 			let checkInterval = setInterval(function() {
-				console.log(checkVideos());
+				//console.log(checkVideos());
 				if (checkVideos()) {
 					hidePreloader();
 					clearInterval(checkInterval); // Stop checking once all videos are loaded and playing
